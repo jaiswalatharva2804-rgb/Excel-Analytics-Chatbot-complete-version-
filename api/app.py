@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify, Response
+from flask_cors import CORS
 import os
 import pandas as pd
 import time
@@ -11,6 +12,7 @@ from chatbot_api import ChatbotAPI   # make sure this path is correct
 # --------------------------------
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
