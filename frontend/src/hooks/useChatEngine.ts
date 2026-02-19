@@ -78,7 +78,7 @@ export const useChatEngine = () => {
       const sysMsg: ChatMessage = {
         id: generateId(),
         role: "ai",
-        content: `📁 **${file.name}** loaded successfully!\n\n• Sheet: **${file.selectedSheet}**\n• Rows: **${file.rowCount}**\n• Columns: **${file.headers.length}** (${file.headers.slice(0, 4).join(", ")}${file.headers.length > 4 ? "..." : ""})\n\nI'm ready to analyze your data. What would you like to know?`,
+        content: `Great! I've loaded ${file.name} successfully. The file contains ${file.rowCount} rows and ${file.headers.length} columns from ${file.selectedSheet}. I'm ready to help you analyze this data. What would you like to know?`,
         timestamp: new Date(),
       };
 

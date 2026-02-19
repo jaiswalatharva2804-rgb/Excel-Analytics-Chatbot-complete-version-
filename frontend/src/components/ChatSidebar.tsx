@@ -5,7 +5,9 @@ import {
   FileSpreadsheet,
   MessageSquare,
   Trash2,
+  Info,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import databytelogo from "../assets/databyte-logo.png";
 
 interface ChatSession {
@@ -48,7 +50,7 @@ const ChatSidebar = ({
             className="w-10 h-10 object-contain"
           />
           <div>
-            <h1 className="text-lg font-bold gradient-text">Excel Analytics Chatbot</h1>
+            <h1 className="text-lg font-bold gradient-text">BPCL Excel Analytics Chatbot</h1>
             <p className="text-xs text-muted-foreground">AI Analytics</p>
           </div>
         </div>
@@ -130,6 +132,17 @@ const ChatSidebar = ({
             ))
           )}
         </div>
+      </div>
+
+      {/* About Us Button */}
+      <div className="p-4 border-t border-border">
+        <Link to="/about">
+          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-muted-foreground
+            hover:text-foreground hover:bg-secondary/50 transition-all duration-200">
+            <Info className="w-4 h-4" />
+            <span className="text-sm">About Us</span>
+          </button>
+        </Link>
       </div>
     </motion.aside>
   );

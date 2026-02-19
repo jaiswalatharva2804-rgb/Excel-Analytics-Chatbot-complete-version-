@@ -120,7 +120,7 @@ const WelcomeScreen = () => (
     >
       <Sparkles className="w-10 h-10 text-primary-foreground" />
     </motion.div>
-    <h2 className="text-3xl font-bold gradient-text mb-3">Welcome to Excel Analytics Chatbot</h2>
+    <h2 className="text-3xl font-bold gradient-text mb-3">Welcome to BPCL Excel Analytics Chatbot</h2>
     <p className="text-muted-foreground max-w-md mb-8">
       Upload an Excel file and ask me anything about your data. I'll provide insights, summaries, and calculations instantly.
     </p>
@@ -185,7 +185,7 @@ const ChatArea = ({ messages, currentFile, onSendMessage, onUploadClick, isTypin
       <div className="px-6 py-4 border-b border-border glass-panel-strong rounded-none flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Bot className="w-5 h-5 text-primary" />
-          <span className="font-semibold text-foreground">Excel Analytics Bot</span>
+          <span className="font-semibold text-foreground">BPCL Excel Analytics Chatbot</span>
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
         </div>
         {currentFile && (

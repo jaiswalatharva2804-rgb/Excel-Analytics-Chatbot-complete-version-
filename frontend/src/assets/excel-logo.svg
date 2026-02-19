@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d9488;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Circular background -->
+  <circle cx="100" cy="100" r="95" fill="url(#circleGrad)"/>
+  
+  <!-- Excel grid -->
+  <rect x="55" y="50" width="90" height="100" fill="white" rx="8"/>
+  
+  <!-- Grid lines horizontal -->
+  <line x1="55" y1="75" x2="145" y2="75" stroke="#0d9488" stroke-width="2.5"/>
+  <line x1="55" y1="95" x2="145" y2="95" stroke="#0d9488" stroke-width="2.5"/>
+  <line x1="55" y1="115" x2="145" y2="115" stroke="#0d9488" stroke-width="2.5"/>
+  <line x1="55" y1="135" x2="145" y2="135" stroke="#0d9488" stroke-width="2.5"/>
+  
+  <!-- Grid lines vertical -->
+  <line x1="85" y1="50" x2="85" y2="150" stroke="#0d9488" stroke-width="2.5"/>
+  <line x1="115" y1="50" x2="115" y2="150" stroke="#0d9488" stroke-width="2.5"/>
+  
+  <!-- AI sparkle badge -->
+  <circle cx="140" cy="60" r="18" fill="#fbbf24"/>
+  <path d="M140 50 L140 70 M130 60 L150 60" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M134 54 L146 66 M146 54 L134 66" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
