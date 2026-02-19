@@ -157,3 +157,64 @@
 .typing-dot-1 { animation: typing-dot 1.4s ease-in-out infinite; }
 .typing-dot-2 { animation: typing-dot 1.4s ease-in-out 0.2s infinite; }
 .typing-dot-3 { animation: typing-dot 1.4s ease-in-out 0.4s infinite; }
+
+/* Custom Prose Styling for Vibrant Markdown */
+.prose {
+  @apply text-foreground;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-primary font-bold;
+}
+
+.prose strong {
+  @apply text-accent font-semibold;
+}
+
+.prose a {
+  @apply text-primary hover:text-accent transition-colors;
+}
+
+.prose code {
+  @apply text-accent bg-secondary px-1.5 py-0.5 rounded;
+}
+
+.prose pre {
+  @apply bg-secondary border border-border;
+}
+
+.prose blockquote {
+  @apply border-l-primary text-muted-foreground;
+}
+
+.prose table {
+  @apply border-border;
+}
+
+.prose thead {
+  @apply border-border;
+}
+
+.prose thead th {
+  @apply text-primary font-semibold bg-secondary/50;
+}
+
+.prose tbody tr {
+  @apply border-border hover:bg-secondary/30 transition-colors;
+}
+
+.prose tbody td {
+  @apply text-foreground;
+}
+
+.prose ul, .prose ol {
+  @apply text-foreground;
+}
+
+.prose li {
+  @apply text-foreground;
+}
+
+.prose p {
+  @apply text-foreground leading-relaxed;
+}

@@ -91,21 +91,21 @@ const ChatSidebar = ({
             </div>
           ) : (
             sessions.map((session, index) => (
-              <motion.button
+              <motion.div
                 key={session.id}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
-                onClick={() => onSelectSession(session.id)}
                 className={`
-                  w-full group flex items-center gap-3 px-3 py-2.5 rounded-lg text-left
-                  transition-all duration-200
+                  w-full group flex items-center gap-3 px-3 py-2.5 rounded-lg
+                  transition-all duration-200 cursor-pointer
                   ${
                     activeSessionId === session.id
                       ? "bg-primary/10 border border-primary/20 text-foreground"
                       : "hover:bg-secondary/50 text-muted-foreground hover:text-foreground"
                   }
                 `}
+                onClick={() => onSelectSession(session.id)}
               >
                 {session.fileName ? (
                   <FileSpreadsheet className="w-4 h-4 text-primary shrink-0" />
@@ -128,7 +128,7 @@ const ChatSidebar = ({
                 >
                   <Trash2 className="w-3 h-3" />
                 </button>
-              </motion.button>
+              </motion.div>
             ))
           )}
         </div>
@@ -136,12 +136,10 @@ const ChatSidebar = ({
 
       {/* About Us Button */}
       <div className="p-4 border-t border-border">
-        <Link to="/about">
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-muted-foreground
+        <Link to="/about" className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-muted-foreground
             hover:text-foreground hover:bg-secondary/50 transition-all duration-200">
-            <Info className="w-4 h-4" />
-            <span className="text-sm">About Us</span>
-          </button>
+          <Info className="w-4 h-4" />
+          <span className="text-sm">About Us</span>
         </Link>
       </div>
     </motion.aside>

@@ -29,7 +29,8 @@ from datetime import datetime
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from app import ExcelAnalyticsChatbot
+import app as main_app
+ExcelAnalyticsChatbot = main_app.ExcelAnalyticsChatbot
 
 
 @dataclass

@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, FileSpreadsheet, Paperclip, Sparkles, Bot, User } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { UploadedFile } from "./FileUploadPanel";
 
 export interface ChatMessage {
@@ -62,7 +64,13 @@ const MessageBubble = ({ message }: { message: ChatMessage }) => {
       </div>
       <div className="flex flex-col gap-1">
         <div className={isUser ? "chat-bubble-user" : "chat-bubble-ai"}>
-          <p className="px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+          <div className="px-4 py-3 text-sm leading-relaxed prose prose-sm dark:prose-invert max-w-none">
+            {isUser ? (
+              <p className="whitespace-pre-wrap">{message.content}</p>
+            ) : (
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.content}</ReactMarkdown>
+            )}
+          </div>
         </div>
 
         {/* Inline table */}

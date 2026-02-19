@@ -172,27 +172,11 @@ def ask():
     if not question:
         return jsonify({"success": False, "error": "Empty question"})
 
-    # Determine if the question is asking to show or preview data
-    show_keywords = ["show", "preview", "display", "list", "view", "top", "first", "last"]
-    is_show_query = any(keyword in question.lower() for keyword in show_keywords)
-    
-    if is_show_query:
-        # For show/preview queries, allow table formatting but keep it clean
-        formatted = (
-            question
-            + "\n\nIMPORTANT: Provide your answer in a conversational style. "
-            + "If showing data, format it as a clean table. "
-            + "Do NOT use any markdown symbols: no asterisks (**), no hashtags (#), no bullet points (-, *), no underscores (__). "
-            + "Write in plain text only."
-        )
-    else:
-        # For other queries, use plain text conversational style
-        formatted = (
-            question
-            + "\n\nIMPORTANT: Provide your answer in plain text without any markdown formatting. "
-            + "Do NOT use asterisks (**), hashtags (#), bullet points (-, *), underscores (__), or any markdown syntax. "
-            + "Use a conversational, natural language style. Write as if speaking to someone."
-        )
+    # Format with Markdown instructions
+    formatted = (
+        question
+        + "\n\nFormat your answer using Markdown with headings, bullet points, bold text, and tables where appropriate."
+    )
 
     try:
 

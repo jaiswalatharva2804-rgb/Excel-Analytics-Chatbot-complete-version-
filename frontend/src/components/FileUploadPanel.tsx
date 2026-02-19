@@ -75,12 +75,15 @@ const FileUploadPanel = ({ isOpen, onClose, onFileUploaded }: FileUploadPanelPro
   const handleConfirm = async () => {
     if (!parsedFile || !selectedSheet) return;
 
+    console.log("Starting upload process...", parsedFile.name);
     setIsProcessing(true);
     setError("");
 
     try {
       // Upload file to backend
+      console.log("Uploading file to backend...");
       const uploadResponse = await api.uploadFile(parsedFile.file);
+      console.log("Upload response:", uploadResponse);
 
       if (!uploadResponse.success) {
         throw new Error(uploadResponse.error || "Upload failed");
@@ -107,6 +110,7 @@ const FileUploadPanel = ({ isOpen, onClose, onFileUploaded }: FileUploadPanelPro
       setIsProcessing(false);
       onClose();
     } catch (err: any) {
+      console.error("Upload error:", err);
       setError(err.message || "Failed to upload file");
       setIsProcessing(false);
     }
@@ -264,10 +268,11 @@ const FileUploadPanel = ({ isOpen, onClose, onFileUploaded }: FileUploadPanelPro
                 {/* Confirm button */}
                 <button
                   onClick={handleConfirm}
+                  disabled={isProcessing}
                   className="w-full gradient-primary text-primary-foreground font-semibold py-3 rounded-xl
-                    hover:opacity-90 transition-opacity animate-pulse-glow"
+                    hover:opacity-90 transition-opacity animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Start Analyzing
+                  {isProcessing ? "Processing..." : "Start Analyzing"}
                 </button>
               </>
             )}
