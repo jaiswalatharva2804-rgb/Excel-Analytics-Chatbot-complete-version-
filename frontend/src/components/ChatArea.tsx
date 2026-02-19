@@ -121,7 +121,7 @@ const WelcomeScreen = () => (
       <Sparkles className="w-10 h-10 text-primary-foreground" />
     </motion.div>
     <h2 className="text-3xl font-bold gradient-text mb-3">Welcome to BPCL Excel Analytics Chatbot</h2>
-    <p className="text-muted-foreground max-w-md mb-8">
+    <p className="text-primary font-semibold max-w-md mb-8 drop-shadow-lg">
       Upload an Excel file and ask me anything about your data. I'll provide insights, summaries, and calculations instantly.
     </p>
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl w-full">

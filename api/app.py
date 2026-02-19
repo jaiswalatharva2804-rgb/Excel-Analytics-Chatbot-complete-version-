@@ -180,16 +180,18 @@ def ask():
         # For show/preview queries, allow table formatting but keep it clean
         formatted = (
             question
-            + "\n\nProvide your answer in a conversational style. "
+            + "\n\nIMPORTANT: Provide your answer in a conversational style. "
             + "If showing data, format it as a clean table. "
-            + "Do not use markdown symbols like asterisks, hashtags, or bullet points."
+            + "Do NOT use any markdown symbols: no asterisks (**), no hashtags (#), no bullet points (-, *), no underscores (__). "
+            + "Write in plain text only."
         )
     else:
         # For other queries, use plain text conversational style
         formatted = (
             question
-            + "\n\nProvide your answer in plain text without markdown formatting, "
-            + "bullet points, asterisks, or hashtags. Use a conversational style."
+            + "\n\nIMPORTANT: Provide your answer in plain text without any markdown formatting. "
+            + "Do NOT use asterisks (**), hashtags (#), bullet points (-, *), underscores (__), or any markdown syntax. "
+            + "Use a conversational, natural language style. Write as if speaking to someone."
         )
 
     try:
