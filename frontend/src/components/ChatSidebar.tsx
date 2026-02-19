@@ -3,7 +3,6 @@ import {
   Plus,
   Upload,
   FileSpreadsheet,
-  Settings,
   MessageSquare,
   Trash2,
 } from "lucide-react";
@@ -131,15 +130,6 @@ const ChatSidebar = ({
             ))
           )}
         </div>
-      </div>
-
-      {/* Settings */}
-      <div className="p-4 border-t border-border">
-        <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-muted-foreground
-          hover:text-foreground hover:bg-secondary/50 transition-all duration-200">
-          <Settings className="w-4 h-4" />
-          <span className="text-sm">Settings</span>
-        </button>
       </div>
     </motion.aside>
   );
